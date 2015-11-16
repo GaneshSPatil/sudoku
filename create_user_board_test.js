@@ -10,7 +10,7 @@ exports.test = test;
 
 //---------------------------------------------------------------------------------------------------------------//
 
-var board = generate_board;
+var board = generate_board();
 var user_board = create_user_board(board);
 
 //---------------------------------------------------------------------------------------------------------------//
@@ -41,11 +41,10 @@ test['create_user_board should contain 81-32 = 49 undefined values'] = function(
 	var count = 0;
 	user_board.forEach(function(row){
 		row.forEach(function(element){
-			if(element == undefined)
-				count++;
+			if(element) count++;
 		});
 	});
-	expect(count).to.equal(49);
+	expect(81 - count).to.equal(49);
 };
 
 //---------------------------------------------------------------------------------------------------------------//
