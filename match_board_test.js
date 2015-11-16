@@ -1,4 +1,4 @@
-var match_board = require('./match_board_test.js').match_board;
+var match_board = require('./match_board.js').match_board;
 var generate_board = require('./generate_board.js').generate_board;
 var expect = require('chai').expect;
 
